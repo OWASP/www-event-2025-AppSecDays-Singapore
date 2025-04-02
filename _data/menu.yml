@@ -1,0 +1,31 @@
+- title: HOME
+  url: /
+- title: PROGRAM
+  items:
+     - title: Schedule
+       url : https://owaspappsecdayssingapore202.sched.com/
+#    - title: Training
+#      url : /trainings/
+#    - title: Event Images
+#      url : /media/
+     - title: Call for Trainers - CLOSED
+       url: https://owasp.submittable.com/submit/298300/2024-owasp-appsec-days-singapore-cft
+     - title: Call for Papers - CLOSED
+       url: https://owasp.submittable.com/submit/297803/owasp-2024-appsec-days-singapore 
+- title: EXHIBIT & SPONSOR 
+  items:
+     - title: Exhibitor & Sponsorship Prospectus 
+       url: https://owasp.wufoo.com/forms/2024-appsec-days-singapore-exhibit-interest/
+    #- title: Exhibitors & Sponsors
+    #  url: 
+    #- title: Exhibitor Kit
+    # url: /exhibitordetails/
+- title: ABOUT
+  #url: /about/
+  items:
+    - title: Volunteer
+      url: https://owasp.wufoo.com/forms/z7wfrfl07e63af/
+    - title: OWASP Merchandise
+      url: https://owasp.org/store
+    - title: Event Code of Conduct
+      url: /event/codeofconduct/

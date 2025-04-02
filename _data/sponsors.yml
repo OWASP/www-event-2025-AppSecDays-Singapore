@@ -1,0 +1,15 @@
+ - logo: /assets/images/sponsors/Appdome.png
+   name: Appdome
+   url: https://www.appdome.com/
+   backgroundSize: 125px
+   type: Gold
+ - logo: /assets/images/sponsors/ContrastNew_Logo_RGB.png
+   name: Contrast Security
+   url: https://www.contrastsecurity.com/
+   backgroundSize: 125px
+   type: Lanyard
+ - logo: /assets/images/sponsors/Dexian.webp
+   name: Dexian
+   url: https://dexian.com/
+   backgroundSize: 125px
+   type: Capture the Flag & Post-Event Speakers Reception
