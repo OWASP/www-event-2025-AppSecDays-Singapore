@@ -12,7 +12,7 @@
        url: https://owasp.org/
      - title: Call for Papers - Opening Soon!
        url: https://owasp.org/
-- title: EXHIBIT & SPONSOR 
+#    - title: EXHIBIT & SPONSOR 
   items:
      - title: Exhibitor & Sponsorship Prospectus 
        url: https://owasp.wufoo.com/forms/2024-appsec-days-singapore-exhibit-interest/
@@ -23,7 +23,7 @@
 - title: ABOUT
   #url: /about/
   items:
-    - title: Volunteer
+    #- title: Volunteer
       url: https://owasp.wufoo.com/forms/z7wfrfl07e63af/
     - title: OWASP Merchandise
       url: https://owasp.org/store
