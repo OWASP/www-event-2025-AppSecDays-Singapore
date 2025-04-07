@@ -1,12 +1,12 @@
-# - Type: Training
-#  Trainers: 
-#    - Name: John John
-#      Email: john.john@owasp.org
-#      Image: /assets/images/trainers/no-person.pg
-#      Twitter: twitter_no_at_symbol
-#      Biography: >-
+- Type: Training
+  Trainers: 
+    - Name: John John
+      Email: john.john@owasp.org
+      Image: /assets/images/trainers/no-person.pg
+      Twitter: twitter_no_at_symbol
+      Biography: >-
           John John has a bio
-#      TrainerId: trainer001
+      TrainerId: trainer001
       #-Name: Trainer Dos
       #Email: tainer.dos@owasp.org
       #Image: /assets/images/trainers/staff_harold.jpg
