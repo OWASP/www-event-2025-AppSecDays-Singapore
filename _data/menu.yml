@@ -2,7 +2,7 @@
   url: /
 #    - title: PROGRAM
   items:
-     - title: Schedule
+    #- title: Schedule
        url : https://owaspappsecdayssingapore202.sched.com/
 #    - title: Training
 #      url : /trainings/
@@ -14,7 +14,7 @@
        url: https://owasp.org/
 #    - title: EXHIBIT & SPONSOR 
   items:
-     - title: Exhibitor & Sponsorship Prospectus 
+    #- title: Exhibitor & Sponsorship Prospectus 
        url: https://owasp.wufoo.com/forms/2024-appsec-days-singapore-exhibit-interest/
     #- title: Exhibitors & Sponsors
     #  url: 
