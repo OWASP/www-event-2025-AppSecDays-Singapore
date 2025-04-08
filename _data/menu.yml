@@ -6,3 +6,10 @@
      url: https://sessionize.com/owasp-appsec-days-singapore-2025-cft/
    - title: Call for Papers
      url: https://sessionize.com/owasp-appsec-days-singapore-2025-cfp/
+- title: ABOUT
+  items:
+   - title: OWASP Merchandise
+     url: https://owasp.org/store
+   - title: Event Code of Conduct
+     url: /event/codeofconduct/
+
