@@ -8,10 +8,10 @@
 #      url : /trainings/
 #    - title: Event Images
 #      url : /media/
-     - title: Call for Trainers - Opening soon!
-       url: https://owasp.org/
-     - title: Call for Papers - Opening Soon!
-       url: https://owasp.org/
+     - title: Call for Trainers
+       url: https://sessionize.com/owasp-appsec-days-singapore-2025-cft/
+     - title: Call for Papers
+       url: https://sessionize.com/owasp-appsec-days-singapore-2025-cfp/
 #    - title: EXHIBIT & SPONSOR 
   items:
     #- title: Exhibitor & Sponsorship Prospectus 
