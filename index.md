@@ -1,6 +1,6 @@
 ---
 
-title: Global AppSec Singapore 2024
+title: Global AppSec Singapore 2025
 layout: event-x
 
 ---
