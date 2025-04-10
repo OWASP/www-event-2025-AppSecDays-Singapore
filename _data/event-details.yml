@@ -7,7 +7,7 @@ registration_url: TBD
 logo_url: https://owasp.org/
 venue: Training will be held at the Lifelong Learning Institute and Conference at the M Hotel Singapore
 location: Lifelong Learning Institute - 1 Eunos Rd 8, Singapore 408601 l M Hotel - 81 Anson Rd, Singapore 079908
-background: appsec logo.jpg
+background: 'appsec logo.jpg'
 background-style: "url('appsec logo.jpg'); background-size: 100px auto; background-repeat: no-repeat; background-position: top left;"
 background-padding: 0em 2em 0em 2em
 keynotestextcolor: fff
