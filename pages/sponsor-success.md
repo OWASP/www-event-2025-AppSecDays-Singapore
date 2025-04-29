@@ -7,6 +7,6 @@ permalink: /sponsor-success/
 ---
 
 <div style="min-height:500px;margin-top:245px;">
-Thank you for your interest in sponsoring the Global AppSec San Francisco 2024 event! Please download our sponsorship documentation here: 
-<a href="https://sf.globalappsec.org/assets/files/sponsorship.pdf">San Francisco Sponsorship Document</a>
+Thank you for your interest in sponsoring the 2025 AppSec Days Singapore event! Please download our exhibitor and sponsorship prospectus here: 
+<a href="https://singapore.appsecdays.orgassets/files/APPSEC_days_deck.pdf">Singapore Exhibitor and Sponsorship Prospecuts</a>
 </div>
