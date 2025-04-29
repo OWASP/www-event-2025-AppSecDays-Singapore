@@ -1,6 +1,6 @@
 ---
 
-title: Sponsorship
+title: Exhibit and Sponsorship
 layout: event_noheader
 permalink: /sponsorship/
 
