@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OWASP AppSec Days Singapore 2025</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        :root {
+            --primary-color: #00E6E6;  /* Cyan/turquoise from the logo */
+            --secondary-color: #000000; /* Black from the logo */
+            --accent-color: #00B3B3;   /* Darker cyan for hover effects */
+        }
+        
+        /* Sponsor Images Styling */
+        .sponsor-logos img {
+            max-width: 150px;
+            max-height: 100px;
+            object-fit: contain;
+        }
+        
+        .sponsor-logo a {
+            display: block;
+            text-align: center;
+        }
+        
+        /* Registration Section Styling */
+        .registration-section {
+            padding: 3rem 0;
+            background-color: var(--primary-light);
+            border-radius: 8px;
+            margin-top: 4rem !important;
+        }
+        
+        .registration-card {
+            background-color: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+            height: 100%;
+        }
+        
+        .registration-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--box-shadow-hover);
+        }
+        
+        .registration-card-header {
+            padding: 1.5rem;
+            text-align: center;
+            border-bottom: 1px solid var(--gray-200);
+        }
+        
+        .conference-card .registration-card-header {
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            color: var(--white);
+        }
+        
+        .training-card .registration-card-header {
+            background: linear-gradient(135deg, var(--secondary-color), #333);
+            color: var(--white);
+        }
+        
+        .registration-card-header h3 {
+            margin: 0;
+            font-weight: 700;
+        }
+        
+        .registration-card-body {
+            padding: 2rem;
+        }
+        
+        .price-tag {
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 1.5rem;
+            color: var(--text-color);
+        }
+        
+        .registration-features {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 1.5rem 0;
+        }
+        
+        .registration-features li {
+            padding: 0.5rem 0;
+            display: flex;
+            align-items: center;
+        }
+        
+        .registration-features li i {
+            color: var(--primary-color);
+            margin-right: 10px;
+        }
+        
+        .registration-note {
+            font-style: italic;
+            color: var(--gray-600);
+        }
+        
+        .registration-note i {
+            margin-right: 5px;
+            color: var(--primary-color);
+        }
+        
+        /* About the Event Section Styling */
+        .about-section {
+            padding: 3rem 0;
+            margin-bottom: 3rem;
+        }
+        
+        .event-timeline {
+            position: relative;
+            padding: 1rem 0;
+        }
+        
+        .timeline-connector {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(to bottom, transparent, var(--primary-color), transparent);
+            transform: translateX(-50%);
+            z-index: 0;
+            display: none;
+        }
+        
+        @media (min-width: 768px) {
+            .timeline-connector {
+                display: block;
+            }
+        }
+        
+        .event-card {
+            background-color: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+            height: 100%;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .event-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--box-shadow-hover);
+        }
+        
+        .event-card-header {
+            padding: 1.5rem;
+            text-align: center;
+            position: relative;
+        }
+        
+        .training-event .event-card-header {
+            background: linear-gradient(135deg, var(--secondary-color), #333);
+            color: var(--white);
+        }
+        
+        .conference-event .event-card-header {
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            color: var(--white);
+        }
+        
+        .event-icon {
+            width: 60px;
+            height: 60px;
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+        }
+        
+        .event-icon i {
+            font-size: 1.8rem;
+        }
+        
+        .event-card-header h3 {
+            margin: 0 0 0.5rem;
+            font-weight: 700;
+        }
+        
+        .event-date {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        
+        .event-card-body {
+            padding: 1.5rem;
+        }
+        
+        .venue-info {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--gray-200);
+        }
+        
+        .venue-info i {
+            color: var(--primary-color);
+            margin-right: 10px;
+            font-size: 1.2rem;
+        }
+        
+        .event-details p {
+            margin-bottom: 1rem;
+        }
+        
+        .event-highlights {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .event-highlights li {
+            padding: 0.5rem 0;
+            display: flex;
+            align-items: center;
+        }
+        
+        .event-highlights li i {
+            color: var(--primary-color);
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark custom-navbar sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="images/logo.png" alt="OWASP AppSec Days Singapore 2025" height="40" class="d-inline-block align-middle me-2">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="speakers.html">Speakers</a></li>
+                    <li class="nav-item"><a class="nav-link" href="cfp.html">Call for Papers</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#register">Register</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#sponsors">Sponsors</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="hero-section">
+        <div class="container">
+            <div class="logo-container text-center mb-4">
+                <img src="images/logo.png" alt="OWASP AppSec Days Singapore 2025" class="img-fluid" style="max-width: 400px;">
+            </div>
+            <h1>OWASP AppSec Days Singapore 2025</h1>
+            <p class="lead">Cybersecurity Conference | 12-13 September 2025</p>
+            <a href="#register" class="btn btn-light btn-lg mt-3">Register Now</a>
+        </div>
+    </div>
+    
+    <div class="event-announcement py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    <div class="text-center mb-4">
+                        <h2 class="announcement-title">SECOND ANNUAL OWASP APPSEC DAYS SINGAPORE</h2>
+                        <h3 class="announcement-subtitle">THE MUST ATTEND EVENT FOR CYBERSECURITY PROFESSIONALS</h3>
+                    </div>
+                    
+                    <div class="alert alert-primary text-center registration-alert" role="alert">
+                        <strong>REGISTRATION IS OPENING SOON!</strong>
+                    </div>
+                    
+                    <div class="event-description">
+                        <p>We are thrilled to announce the second annual 2025 OWASP AppSec Days Singapore training and conference taking place on September 12 and 13 - it's bigger, bolder, and packed with even more hands-on experiences!</p>
+                        
+                        <p>Get ready for one full day of immersive training and another action-packed day of inspiring talks, cutting-edge exhibitors, virbrant networking, and an adrenaline-pumping Capture the Flag competition.</p>
+                        
+                        <p>Join a global community of security professionals, innovators, and through leaders as we explore the latest in application security. Whether you're looking to deepen your expertise, connect with industry peers, or stay ahead of the curve, AppSec Days Singapore delivers the energy and excellence you expect from an OWASP event - and then some.</p>
+                        
+                        <p class="ticket-note"><strong>*1-day training courses on 12-September requires a separate ticket purchase from conference and exhibition on 13-September.</strong></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mt-5">
+        <section id="about" class="about-section">
+            <h2 class="section-title text-center mb-5">About the Event</h2>
+            <div class="row justify-content-center">
+                <div class="col-md-10">
+                    <div class="event-timeline">
+                        <div class="timeline-connector"></div>
+                        <div class="row">
+                            <div class="col-md-6 mb-4">
+                                <div class="event-card training-event">
+                                    <div class="event-card-header">
+                                        <div class="event-icon"><i class="bi bi-laptop"></i></div>
+                                        <h3>Training and CTF</h3>
+                                        <div class="event-date">12th September 2025</div>
+                                    </div>
+                                    <div class="event-card-body">
+                                        <div class="venue-info">
+                                            <i class="bi bi-geo-alt-fill"></i>
+                                            <span>Lifelong Learning Institute</span>
+                                        </div>
+                                        <div class="event-details">
+                                            <p>A full day of immersive training sessions led by industry experts. Perfect your skills with hands-on workshops and put your knowledge to the test in our adrenaline-pumping Capture The Flag competition.</p>
+                                            <ul class="event-highlights">
+                                                <li><i class="bi bi-shield-lock"></i> Hands-on security workshops</li>
+                                                <li><i class="bi bi-trophy"></i> Live CTF competition</li>
+                                                <li><i class="bi bi-people"></i> Network with security experts</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-4">
+                                <div class="event-card conference-event">
+                                    <div class="event-card-header">
+                                        <div class="event-icon"><i class="bi bi-mic"></i></div>
+                                        <h3>Conference</h3>
+                                        <div class="event-date">13th September 2025</div>
+                                    </div>
+                                    <div class="event-card-body">
+                                        <div class="venue-info">
+                                            <i class="bi bi-geo-alt-fill"></i>
+                                            <span>M Hotel Singapore City Centre</span>
+                                        </div>
+                                        <div class="event-details">
+                                            <p>Join us for a day of inspiring talks, cutting-edge research presentations, and valuable networking opportunities with the brightest minds in application security.</p>
+                                            <ul class="event-highlights">
+                                                <li><i class="bi bi-chat-quote"></i> Keynote presentations</li>
+                                                <li><i class="bi bi-diagram-3"></i> Technical deep dives</li>
+                                                <li><i class="bi bi-building"></i> Industry exhibitors</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="register" class="mt-5 registration-section">
+            <h2 class="section-title text-center mb-5">Registration</h2>
+            <div class="row justify-content-center">
+                <div class="col-md-5 mb-4">
+                    <div class="registration-card conference-card">
+                        <div class="registration-card-header">
+                            <h3>Conference Ticket</h3>
+                        </div>
+                        <div class="registration-card-body">
+                            <div class="price-tag">S$250</div>
+                            <ul class="registration-features">
+                                <li><i class="bi bi-check-circle-fill"></i> Full day conference access</li>
+                                <li><i class="bi bi-check-circle-fill"></i> Networking opportunities</li>
+                                <li><i class="bi bi-check-circle-fill"></i> Lunch and refreshments</li>
+                                <li><i class="bi bi-check-circle-fill"></i> Conference materials</li>
+                            </ul>
+                            <div class="text-center mt-4">
+                                <a href="#" class="btn btn-custom-primary btn-lg">Register Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-5 mb-4">
+                    <div class="registration-card training-card">
+                        <div class="registration-card-header">
+                            <h3>Training Ticket</h3>
+                        </div>
+                        <div class="registration-card-body">
+                            <div class="price-tag">S$500</div>
+                            <ul class="registration-features">
+                                <li><i class="bi bi-check-circle-fill"></i> Full day hands-on training</li>
+                                <li><i class="bi bi-check-circle-fill"></i> Expert instructors</li>
+                                <li><i class="bi bi-check-circle-fill"></i> Training materials</li>
+                                <li><i class="bi bi-check-circle-fill"></i> Lunch and refreshments</li>
+                            </ul>
+                            <div class="text-center mt-4">
+                                <a href="#" class="btn btn-custom-primary btn-lg">Register Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-4">
+                <p class="registration-note"><i class="bi bi-info-circle"></i> Early bird discounts available until July 31, 2025</p>
+            </div>
+        </section>
+
+        <section id="sponsors" class="mt-5">
+            <h2 class="section-title">Our Sponsors</h2>
+            
+            <!-- Platinum Sponsors -->
+            <div class="sponsor-tier mb-5">
+                <h3 class="tier-title platinum-title">Platinum Sponsors</h3>
+                <div class="sponsor-logos">
+                    <div class="sponsor-logo platinum-sponsor">
+                        <div class="dummy-logo platinum">Platinum<br>Sponsor</div>
+                        <p>Company Name</p>
+                    </div>
+                    <div class="sponsor-logo platinum-sponsor">
+                        <div class="dummy-logo platinum">Platinum<br>Sponsor</div>
+                        <p>Company Name</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Gold Sponsors -->
+            <div class="sponsor-tier mb-5">
+                <h3 class="tier-title gold-title">Gold Sponsors</h3>
+                <div class="sponsor-logos">
+                    <div class="sponsor-logo gold-sponsor">
+                        <div class="dummy-logo gold">Gold<br>Sponsor</div>
+                        <p>Company Name</p>
+                    </div>
+                    <div class="sponsor-logo gold-sponsor">
+                        <div class="dummy-logo gold">Gold<br>Sponsor</div>
+                        <p>Company Name</p>
+                    </div>
+                    <div class="sponsor-logo gold-sponsor">
+                        <div class="dummy-logo gold">Gold<br>Sponsor</div>
+                        <p>Company Name</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Silver Sponsors -->
+            <div class="sponsor-tier mb-5">
+                <h3 class="tier-title silver-title">Silver Sponsors</h3>
+                <div class="sponsor-logos">
+                    <div class="sponsor-logo silver-sponsor">
+                        <div class="dummy-logo silver">Silver<br>Sponsor</div>
+                        <p>Company Name</p>
+                    </div>
+                    <div class="sponsor-logo silver-sponsor">
+                        <div class="dummy-logo silver">Silver<br>Sponsor</div>
+                        <p>Company Name</p>
+                    </div>
+                    <div class="sponsor-logo silver-sponsor">
+                        <div class="dummy-logo silver">Silver<br>Sponsor</div>
+                        <p>Company Name</p>
+                    </div>
+                    <div class="sponsor-logo silver-sponsor">
+                        <div class="dummy-logo silver">Silver<br>Sponsor</div>
+                        <p>Company Name</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Bronze Sponsors -->
+            <div class="sponsor-tier mb-5">
+                <h3 class="tier-title bronze-title">Bronze Sponsors</h3>
+                <div class="sponsor-logos">
+                    <div class="sponsor-logo bronze-sponsor">
+                        <div class="dummy-logo bronze">Bronze<br>Sponsor</div>
+                        <p>Company Name</p>
+                    </div>
+                    <div class="sponsor-logo bronze-sponsor">
+                        <div class="dummy-logo bronze">Bronze<br>Sponsor</div>
+                        <p>Company Name</p>
+                    </div>
+                    <div class="sponsor-logo bronze-sponsor">
+                        <div class="dummy-logo bronze">Bronze<br>Sponsor</div>
+                        <p>Company Name</p>
+                    </div>
+                    <div class="sponsor-logo bronze-sponsor">
+                        <div class="dummy-logo bronze">Bronze<br>Sponsor</div>
+                        <p>Company Name</p>
+                    </div>
+                    <div class="sponsor-logo bronze-sponsor">
+                        <div class="dummy-logo bronze">Bronze<br>Sponsor</div>
+                        <p>Company Name</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Supporting Partners -->
+            <div class="sponsor-tier mb-5">
+                <h3 class="tier-title supporting-title">Supporting Partners</h3>
+                <div class="sponsor-logos">
+                    <div class="sponsor-logo supporting-sponsor">
+                        <a href="https://www.clutchevents.co/" target="_blank">
+                            <img src="images/sponsors/clutch.jpg" alt="Clutch Events" class="img-fluid">
+                            <p>Clutch Events</p>
+                        </a>
+                    </div>
+                    <div class="sponsor-logo supporting-sponsor">
+                        <div class="dummy-logo supporting">Partner</div>
+                        <p>Organization Name</p>
+                    </div>
+                    <div class="sponsor-logo supporting-sponsor">
+                        <div class="dummy-logo supporting">Partner</div>
+                        <p>Organization Name</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-5">
+                <h4>Interested in sponsoring?</h4>
+                <a href="#" class="btn btn-custom-primary">Become a Sponsor</a>
+            </div>
+        </section>
+
+        <section id="cfp" class="mt-5">
+            <h2 class="section-title">Call for Papers</h2>
+            <p>We invite cybersecurity experts to submit their research, case studies, and innovative solutions.</p>
+            <a href="#" class="btn btn-custom-secondary">Submit Proposal</a>
+        </section>
+    </div>
+
+    <footer class="custom-footer text-center py-4 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>Contact Us</h5>
+                    <p>Email: info@owaspappsecsing.org</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Follow Us</h5>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon"><i class="bi bi-twitter"></i></a>
+                        <a href="#" class="social-icon"><i class="bi bi-linkedin"></i></a>
+                        <a href="#" class="social-icon"><i class="bi bi-github"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Code of Conduct</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="mt-4">
+            <p>&copy; 2025 OWASP AppSec Days Singapore. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
