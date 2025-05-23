@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Join the Onsite AppSec & DevSecOps Capture The Flag competition at OWASP AppSec Days Singapore 2025 - test your application security skills in person.">
+    <title>Onsite AppSec & DevSecOps CTF - OWASP AppSec Days Singapore 2025</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* CTF Page Specific Styles */
+        .ctf-section {
+            padding: 4rem 0;
+        }
+        
+        .ctf-card {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+            height: 100%;
+            margin-bottom: 2rem;
+        }
+        
+        .ctf-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--box-shadow-hover);
+        }
+        
+        .ctf-card-header {
+            padding: 2rem;
+            text-align: center;
+            color: var(--white);
+            background: linear-gradient(135deg, var(--secondary-color), #333);
+        }
+        
+        .ctf-card-body {
+            padding: 2rem;
+            background-color: var(--white);
+        }
+        
+        .ctf-features {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 1.5rem 0;
+        }
+        
+        .ctf-features li {
+            padding: 0.5rem 0;
+            display: flex;
+            align-items: center;
+        }
+        
+        .ctf-features li i {
+            color: var(--primary-color);
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark custom-navbar sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="images/logo.png" alt="OWASP AppSec Days Singapore 2025" height="40" class="d-inline-block align-middle me-2">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="speakers.html">Speakers</a></li>
+                    <li class="nav-item"><a class="nav-link" href="cfp.html">Call for Papers</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" href="#" id="ctfDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            CTF
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="ctfDropdown">
+                            <li><a class="dropdown-item" href="global-ctf.html">Global CTF</a></li>
+                            <li><a class="dropdown-item active" href="onsite-ctf.html">Onsite CTF</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#register">Register</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#sponsors">Sponsors</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="hero-section">
+        <div class="container">
+            <div class="logo-container text-center mb-4">
+                <img src="images/logo.png" alt="OWASP AppSec Days Singapore 2025" class="img-fluid" style="max-width: 400px;">
+            </div>
+            <h1>Onsite AppSec & DevSecOps CTF</h1>
+            <p class="lead">Test your application security skills in-person at OWASP AppSec Days Singapore 2025!</p>
+        </div>
+    </div>
+    
+    <div class="container mt-5">
+        <section id="onsite-ctf" class="ctf-section">
+            <h2 class="section-title text-center mb-5">In-Person Challenge</h2>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="ctf-card">
+                        <div class="ctf-card-header">
+                            <h3>Onsite AppSec & DevSecOps CTF</h3>
+                            <p class="mb-0">September 13, 2025</p>
+                        </div>
+                        <div class="ctf-card-body">
+                            <div class="text-center">
+                                <h4>More Details Coming Soon!</h4>
+                                <p class="mt-4">We're preparing an exciting onsite CTF experience focused on Application Security and DevSecOps for AppSec Days Singapore 2025 attendees. Stay tuned for more information about format, challenges, and prizes.</p>
+                                
+                                <div class="alert alert-info mt-4">
+                                    <i class="bi bi-info-circle-fill me-2"></i> The onsite CTF will feature hands-on challenges related to:
+                                </div>
+                                
+                                <ul class="ctf-features text-start mt-4">
+                                    <li><i class="bi bi-check-circle-fill"></i> Web application vulnerability discovery and exploitation</li>
+                                    <li><i class="bi bi-check-circle-fill"></i> Secure coding practices</li>
+                                    <li><i class="bi bi-check-circle-fill"></i> DevSecOps pipeline security</li>
+                                    <li><i class="bi bi-check-circle-fill"></i> API security testing</li>
+                                    <li><i class="bi bi-check-circle-fill"></i> Cloud security configuration</li>
+                                </ul>
+                                
+                                <div class="alert alert-info mt-4">
+                                    <i class="bi bi-info-circle-fill me-2"></i> Subscribe to our newsletter to be the first to know when registration opens.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer class="custom-footer text-center py-4 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <h5>Contact Us</h5>
+                    <p><i class="bi bi-envelope me-2"></i> info@appsecdayssingapore.org</p>
+                </div>
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <h5>Follow Us</h5>
+                    <div class="social-icons">
+                        <a href="#" class="me-2"><i class="bi bi-twitter"></i></a>
+                        <a href="#" class="me-2"><i class="bi bi-linkedin"></i></a>
+                        <a href="#" class="me-2"><i class="bi bi-facebook"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#register">Register</a></li>
+                        <li><a href="cfp.html">Call for Papers</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-4">
+                <p class="mb-0">&copy; 2025 OWASP AppSec Days Singapore. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
