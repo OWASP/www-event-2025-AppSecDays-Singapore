@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Advanced AI Red Teaming: Adversarial Testing for LLM Applications at OWASP AppSec Days Singapore 2025">
+    <title>Advanced AI Red Teaming - OWASP AppSec Days Singapore 2025</title>
+    <link rel="icon" href="images/favicon.png" type="image/png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .training-header {
+            background: linear-gradient(135deg, #00E6E6, #00B3B3);
+            color: white;
+            padding: 80px 0 40px;
+            margin-bottom: 40px;
+        }
+        
+        .training-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+        
+        .training-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .meta-item {
+            display: flex;
+            align-items: center;
+            font-size: 1rem;
+        }
+        
+        .meta-item i {
+            margin-right: 8px;
+            font-size: 1.2rem;
+        }
+        
+        .training-content {
+            line-height: 1.8;
+            color: #333;
+        }
+        
+        .training-sidebar {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 25px;
+            position: sticky;
+            top: 20px;
+        }
+        
+        .sidebar-section {
+            margin-bottom: 25px;
+        }
+        
+        .sidebar-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: #333;
+            border-bottom: 2px solid #00E6E6;
+            padding-bottom: 8px;
+        }
+        
+        .instructor-card {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .instructor-avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 15px;
+            border: 3px solid #00E6E6;
+        }
+        
+        .instructor-info h4 {
+            margin: 0 0 5px;
+            font-size: 1.1rem;
+        }
+        
+        .instructor-title {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 5px;
+        }
+        
+        .social-links a {
+            color: #666;
+            margin-right: 10px;
+            font-size: 1.1rem;
+            transition: color 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            color: #00E6E6;
+        }
+        
+        .btn-register {
+            background-color: #00E6E6;
+            color: #000;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            width: 100%;
+            margin-top: 15px;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-register:hover {
+            background-color: #00B3B3;
+            color: #fff;
+            transform: translateY(-2px);
+        }
+        
+        .training-image {
+            width: 100%;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .module-item {
+            display: flex;
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .module-number {
+            background: #00E6E6;
+            color: #000;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+        
+        .back-to-trainings {
+            display: inline-flex;
+            align-items: center;
+            color: #fff;
+            margin-bottom: 20px;
+            text-decoration: none;
+            transition: opacity 0.3s ease;
+        }
+        
+        .back-to-trainings:hover {
+            color: #fff;
+            opacity: 0.9;
+        }
+        
+        .back-to-trainings i {
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark custom-navbar sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="images/logo.png" alt="OWASP AppSec Days Singapore 2025" height="40" class="d-inline-block align-middle me-2">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="speakers.html">Speakers</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="ctfDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            CTF
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="ctfDropdown">
+                            <li><a class="dropdown-item" href="global-ctf.html">Global CTF</a></li>
+                            <li><a class="dropdown-item" href="onsite-ctf.html">Onsite CTF</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link active" href="trainings.html">Trainings</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#register">Register</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#sponsors">Sponsors</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="training-header">
+        <div class="container">
+            <a href="trainings.html" class="back-to-trainings">
+                <i class="bi bi-arrow-left"></i> Back to All Trainings
+            </a>
+            <h1 class="training-title">Advanced AI Red Teaming</h1>
+            <p class="lead mb-4">Adversarial Testing for LLM Applications</p>
+            <div class="training-meta">
+                <div class="meta-item">
+                    <i class="bi bi-person"></i>
+                    <span>Instructor: <strong>Marudhamaran Gunasekaran</strong></span>
+                </div>
+                <div class="meta-item">
+                    <i class="bi bi-calendar"></i>
+                    <span>Date: <strong>September 12, 2025</strong></span>
+                </div>
+                <div class="meta-item">
+                    <i class="bi bi-clock"></i>
+                    <span>Duration: <strong>8 Hours (9:00 AM - 6:00 PM)</strong></span>
+                </div>
+                <div class="meta-item">
+                    <i class="bi bi-graph-up"></i>
+                    <span>Level: <strong>Intermediate</strong></span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                <img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" 
+                     alt="Advanced AI Red Teaming" 
+                     class="training-image">
+                
+                <div class="training-content">
+                    <h2>About This Training</h2>
+                    <p>This intensive 8-hour deep-dive transforms you from an AI observer into an AI adversary—and ultimately, an AI defender. You'll think, act, and attack like a real threat actor, learning to exploit the same vulnerabilities that keep security teams awake at night.</p>
+                    
+                    <div class="card my-4">
+                        <div class="card-body">
+                            <h4>Hands-on Experience</h4>
+                            <p>You will gain hands-on experience in:</p>
+                            <ul>
+                                <li>Mapping AI system architectures and identify attack surfaces across the entire ML pipeline</li>
+                                <li>Crafting sophisticated prompt injections that bypass safety guardrails</li>
+                                <li>Planting undetectable backdoors in neural networks</li>
+                                <li>Leveraging RAG systems and AI agents to access sensitive data</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <h3>Training Format</h3>
+                    <div class="row text-center my-4">
+                        <div class="col-md-6 mb-3">
+                            <div class="p-3 border rounded">
+                                <i class="bi bi-chat-square-text fs-1 text-primary"></i>
+                                <h5>Lectures</h5>
+                                <p>20-40% of the training</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="p-3 border rounded">
+                                <i class="bi bi-laptop fs-1 text-primary"></i>
+                                <h5>Hands-on Labs</h5>
+                                <p>60-80% of the training</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+
+                    
+                    <div class="card bg-light my-4">
+                        <div class="card-body">
+                            <h3>Who Should Take This Course</h3>
+                            <ul class="mb-0">
+                                <li>Security engineers</li>
+                                <li>Software engineers</li>
+                                <li>Data scientists</li>
+                                <li>ML engineers</li>
+                                <li>Ops engineers</li>
+                                <li>Anyone who is:</li>
+                                <ul>
+                                    <li>Willing to expand their knowledge beyond traditional pentesting into AI-specific threats</li>
+                                    <li>Wanting to understand how their creations can be weaponized</li>
+                                </ul>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="card border-warning my-4">
+                        <div class="card-body">
+                            <h3>Student Requirements</h3>
+                            <p class="mb-1">A laptop with a browser (Chrome or Firefox recommended)</p>
+                            <p class="mb-0">We have online cloud labs that require a browser capable of web socket connections.</p>
+                            <p class="mt-2 mb-0 text-muted"><small>Note: Even iPads would be sufficient for this training.</small></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-4">
+                <div class="training-sidebar">
+                    <div class="sidebar-section">
+                        <h3 class="sidebar-title">Training Details</h3>
+                        <p><strong>Date:</strong> September 12, 2025</p>
+                        <p><strong>Time:</strong> 9:00 AM - 6:00 PM (SGT)</p>
+                        <p><strong>Location:</strong> Lifelong Learning Institute, Singapore</p>
+                        <p><strong>Price:</strong> SGD 500</p>
+                        <a href="https://owaspappsecdayssingapore.rsvpify.com/" class="btn btn-register" target="_blank">Register Now</a>
+                    </div>
+                    
+                    <div class="sidebar-section">
+                        <h3 class="sidebar-title">Instructor</h3>
+                        <div class="instructor-card">
+                            <img src="speakers/marudhamaran-gunasekaran.jpg" 
+                                 alt="Marudhamaran Gunasekaran" 
+                                 class="instructor-avatar rounded-circle">
+                            <div class="instructor-info">
+                                <h4>Marudhamaran Gunasekaran</h4>
+                                <p class="instructor-title">Principal Security Consultant</p>
+                                <p class="instructor-company">Practical DevSecOps</p>
+                                <div class="social-links">
+                                    <a href="#" target="_blank"><i class="bi bi-twitter"></i></a>
+                                    <a href="#" target="_blank"><i class="bi bi-linkedin"></i></a>
+                                    <a href="#" target="_blank"><i class="bi bi-github"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <p>Marudhamaran Gunasekaran is a Security Consultant with a strong passion for securing software development through training and consulting. He is the developer and maintainer of the OWASP ZAP Dot Net API and speaks at various meetups and conferences on Agile Software Development and Security.</p>
+                        <p>His certifications include Azure Certified Security Engineer, Microsoft Certified Trainer, ISO 27001 Lead Auditor, Professional Scrum Master I/II/III, and Certified DevSecOps Professional.</p>
+                    </div>
+                    
+                    <div class="sidebar-section">
+                        <h3 class="sidebar-title">What's Included</h3>
+                        <ul>
+                            <li>PDF manual with slides & notes</li>
+                            <li>30-day unlimited access to hands-on labs</li>
+                            <li>Foundational beginner lab exercises</li>
+                            <li>Lunch & refreshments</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="custom-footer text-center py-4 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <p class="mb-2">© 2025 OWASP AppSec Days Singapore. All rights reserved.</p>
+                    <div class="social-links">
+                        <a href="#" class="text-white me-3"><i class="bi bi-twitter"></i></a>
+                        <a href="#" class="text-white me-3"><i class="bi bi-linkedin"></i></a>
+                        <a href="#" class="text-white"><i class="bi bi-facebook"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
