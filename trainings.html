@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Join our expert-led training sessions at OWASP AppSec Days Singapore 2025. Enhance your cybersecurity skills with hands-on training.">
+    <title>Trainings - OWASP AppSec Days Singapore 2025</title>
+    <link rel="icon" href="images/favicon.png" type="image/png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .training-card {
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin-bottom: 30px;
+            height: 100%;
+        }
+        
+        .training-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .training-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .training-content {
+            padding: 20px;
+        }
+        
+        .training-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        
+        .training-instructor {
+            color: #666;
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+        }
+        
+        .training-excerpt {
+            color: #555;
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+        }
+        
+        .training-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid #eee;
+            font-size: 0.9rem;
+        }
+        
+        .training-duration, .training-level {
+            display: flex;
+            align-items: center;
+            color: #666;
+        }
+        
+        .training-duration i, .training-level i {
+            margin-right: 5px;
+            color: #00E6E6;
+        }
+        
+        .btn-primary {
+            background-color: #00E6E6;
+            color: #000;
+            border: none;
+            padding: 8px 20px;
+            border-radius: 4px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            background-color: #00B3B3;
+            color: #fff;
+            transform: translateY(-2px);
+        }
+        
+        .btn-outline-primary {
+            background-color: transparent;
+            color: #00E6E6;
+            border: 1px solid #00E6E6;
+            padding: 8px 20px;
+            border-radius: 4px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-outline-primary:hover {
+            background-color: rgba(0, 230, 230, 0.1);
+            color: #00E6E6;
+            transform: translateY(-2px);
+        }
+        
+        .page-header {
+            background: linear-gradient(135deg, #00E6E6, #00B3B3);
+            color: white;
+            padding: 60px 0;
+            margin-bottom: 60px;
+        }
+        
+        .page-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+        
+        .page-subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark custom-navbar sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="images/logo.png" alt="OWASP AppSec Days Singapore 2025" height="40" class="d-inline-block align-middle me-2">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="speakers.html">Speakers</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="ctfDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            CTF
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="ctfDropdown">
+                            <li><a class="dropdown-item" href="global-ctf.html">Global CTF</a></li>
+                            <li><a class="dropdown-item" href="onsite-ctf.html">Onsite CTF</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link active" href="#">Trainings</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#register">Register</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#sponsors">Sponsors</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="page-header text-center">
+        <div class="container">
+            <h1 class="page-title">Trainings</h1>
+            <p class="page-subtitle">Enhance your cybersecurity skills with our expert-led training sessions</p>
+        </div>
+    </header>
+
+    <div class="container py-5">
+        <div class="row">
+            <!-- Training 1 -->
+            <div class="col-md-4">
+                <div class="training-card">
+                    <img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="AI Security Training" class="training-image">
+                    <div class="training-content">
+                        <h3 class="training-title">Advanced AI Red Teaming: Adversarial Testing for LLM Applications</h3>
+                        <p class="training-instructor">By Marudhamaran Gunasekaran</p>
+                        <p class="training-excerpt">Transform from an AI observer to an AI adversary and defender in this intensive 8-hour deep-dive into AI system security.</p>
+                        <div class="training-meta">
+                            <span class="training-duration"><i class="bi bi-clock"></i> 1 Day</span>
+                            <span class="training-level"><i class="bi bi-graph-up"></i> Intermediate</span>
+                        </div>
+                        <div class="d-flex gap-2 mt-3">
+                            <a href="training-ai-security.html" class="btn btn-outline-primary flex-grow-1">View Details</a>
+                            <a href="https://owaspappsecdayssingapore.rsvpify.com/" class="btn btn-primary flex-grow-1" target="_blank">Register Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Training 2 -->
+            <div class="col-md-4">
+                <div class="training-card">
+                    <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Cloud Security" class="training-image">
+                    <div class="training-content">
+                        <h3 class="training-title">Hacking Modern Web Apps: Master the Future of Attack Vectors</h3>
+                        <p class="training-instructor">By Abraham Aranguren</p>
+                        <p class="training-excerpt">Learn to hack and secure JavaScript desktop applications in this fully hands-on training built by professional penetration testers.</p>
+                        <div class="training-meta">
+                            <span class="training-duration"><i class="bi bi-clock"></i> 1 Day</span>
+                            <span class="training-level"><i class="bi bi-graph-up"></i> Intermediate</span>
+                        </div>
+                        <div class="d-flex gap-2 mt-3">
+                            <a href="hacking-modern-webapps.html" class="btn btn-outline-primary flex-grow-1">View Details</a>
+                            <a href="https://owaspappsecdayssingapore.rsvpify.com/" class="btn btn-primary flex-grow-1" target="_blank">Register Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Training 3 -->
+            <div class="col-md-4">
+                <div class="training-card">
+                    <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="AWS EKS Security" class="training-image">
+                    <div class="training-content">
+                        <h3 class="training-title">Hack and Defend AWS EKS Clusters using OWASP EKS Goat</h3>
+                        <p class="training-instructor">By Divyanshu Shukla and Anjali Singh Shukla</p>
+                        <p class="training-excerpt">Learn to secure AWS EKS clusters through hands-on offensive security techniques and defensive strategies using OWASP EKS Goat.</p>
+                        <div class="training-meta">
+                            <span class="training-duration"><i class="bi bi-clock"></i> 1 Day</span>
+                            <span class="training-level"><i class="bi bi-graph-up"></i> Intermediate</span>
+                        </div>
+                        <div class="d-flex gap-2 mt-3">
+                            <a href="owasp-eks-goat.html" class="btn btn-outline-primary flex-grow-1">View Details</a>
+                            <a href="https://owaspappsecdayssingapore.rsvpify.com/" class="btn btn-primary flex-grow-1" target="_blank">Register Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="custom-footer text-center py-4 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <p class="mb-2">© 2025 OWASP AppSec Days Singapore. All rights reserved.</p>
+                    <div class="social-links">
+                        <a href="#" class="text-white me-3"><i class="bi bi-twitter"></i></a>
+                        <a href="#" class="text-white me-3"><i class="bi bi-linkedin"></i></a>
+                        <a href="#" class="text-white"><i class="bi bi-facebook"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
