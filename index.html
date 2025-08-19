@@ -103,6 +103,30 @@
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
         
+        /* CTF Card styling */
+        .ctf-card .registration-card-header {
+            background: linear-gradient(135deg, #20c997, #0dcaf0);
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .ctf-badge {
+            position: absolute;
+            top: 10px;
+            right: -30px;
+            background-color: #0dcaf0; /* info-like */
+            color: #000;
+            padding: 3px 30px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            transform: rotate(45deg);
+            transform-origin: center;
+            width: 120px;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
         .student-card .price-tag {
             color: #6a11cb;
         }
@@ -430,7 +454,7 @@
         <section id="register" class="mt-5 registration-section">
             <h2 class="section-title text-center mb-5">Registration</h2>
             <div class="row justify-content-center">
-                <div class="col-md-5 col-lg-4 mb-4">
+                <div class="col-md-6 col-lg-3 mb-4">
                     <div class="registration-card conference-card">
                         <div class="registration-card-header">
                             <h3>Conference Ticket</h3>
@@ -449,7 +473,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-5 col-lg-4 mb-4">
+                <div class="col-md-6 col-lg-3 mb-4">
                     <div class="registration-card student-card">
                         <div class="registration-card-header">
                             <h3>Student Conference Ticket</h3>
@@ -470,7 +494,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-5 col-lg-4 mb-4">
+                <div class="col-md-6 col-lg-3 mb-4">
                     <div class="registration-card training-card">
                         <div class="registration-card-header">
                             <h3>Training Ticket</h3>
@@ -485,6 +509,27 @@
                             </ul>
                             <div class="text-center mt-4">
                                 <a href="https://owaspappsecdayssingapore.rsvpify.com/" class="btn btn-custom-primary btn-lg">Register Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="registration-card ctf-card">
+                        <div class="registration-card-header">
+                            <h3>CTF Ticket</h3>
+                            <div class="ctf-badge">CTF</div>
+                        </div>
+                        <div class="registration-card-body">
+                            <div class="price-tag">S$50</div>
+                            <ul class="registration-features">
+                                <li><i class="bi bi-check-circle-fill"></i> Global CTF <span class="text-muted small">(Free to join)</span></li>
+                                <li><i class="bi bi-check-circle-fill"></i> On-site CTF in Singapore</li>
+                                <li><i class="bi bi-check-circle-fill"></i> Lunch and refreshments</li>
+                                <li><i class="bi bi-check-circle-fill"></i> Prize money for winners</li>
+                            </ul>
+                            <div class="d-flex justify-content-center gap-2 mt-4 flex-wrap">
+                                <a href="global-ctf.html" class="btn btn-custom-primary">Global CTF</a>
+                                <a href="onsite-ctf.html" class="btn btn-custom-primary">On-site CTF</a>
                             </div>
                         </div>
                     </div>
