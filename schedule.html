@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Schedule for OWASP AppSec Days Singapore 2025 - Day 1 Trainings & CTF, Day 2 Conference.">
+    <title>Schedule - OWASP AppSec Days Singapore 2025</title>
+    <link rel="icon" href="images/favicon.png" type="image/png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .schedule-section { padding: 3rem 0; }
+        .day-card { background: var(--white); border-radius: 8px; box-shadow: var(--box-shadow); overflow: hidden; }
+        .day-header { padding: 1.5rem; color: #fff; background: linear-gradient(135deg, var(--secondary-color), #333); }
+        .day-header.training { background: linear-gradient(135deg, var(--primary-color), var(--accent-color)); color: #000; }
+        .meta { display: flex; flex-wrap: wrap; gap: 1rem; font-size: 0.95rem; margin-top: .5rem; }
+        .meta i { color: var(--primary-color); margin-right: .4rem; }
+        .table thead th { background: #f8f9fa; }
+        /* Tabs */
+        .schedule-tabs { display: flex; justify-content: center; gap: .75rem; margin: 0 0 1.5rem; flex-wrap: wrap; }
+        .tab-btn { border: 2px solid var(--primary-color); color: var(--secondary-color); background: var(--white); padding: .5rem 1rem; border-radius: 30px; font-weight: 700; letter-spacing: .3px; transition: var(--transition); }
+        .tab-btn:hover { background: var(--primary-light); transform: translateY(-2px); }
+        .tab-btn.active { background: var(--primary-color); color: var(--secondary-color); box-shadow: var(--box-shadow-hover); }
+        .day-pane.hidden { display: none; }
+        /* Row highlighting scoped to schedule tables */
+        .session-table tbody tr { transition: background-color .2s ease; }
+        .session-table tbody tr:not(.break-row):not(.table-light):hover { background: #f7fbfb; }
+        .session-table tbody tr:not(.break-row):not(.table-light) { background: #ffffff; border-left: 4px solid transparent; }
+        .session-table tbody tr.break-row { background: var(--primary-light); font-style: italic; border-left: 4px solid var(--primary-color); }
+        .session-table tbody tr.table-light { background: #f1f5f9; }
+        /* Break rows: color only time and activity columns; keep speaker column neutral */
+        .session-table tbody tr.break-row td:nth-child(2) { background: #ffffff; }
+        .session-table tbody tr.break-row td:nth-child(1),
+        .session-table tbody tr.break-row td:nth-child(3) { background: var(--primary-light); }
+
+        /* Mini speaker avatars next to names */
+        .mini-avatar { width: 28px; height: 28px; border-radius: 50%; object-fit: cover; box-shadow: 0 1px 4px rgba(0,0,0,0.2); }
+
+        /* Keynote highlight */
+        .session-table tbody tr.keynote-row { background: #f0fffe; border-left: 6px solid var(--accent-color); box-shadow: inset 0 0 0 9999px rgba(0, 230, 230, 0.06); }
+        .session-table tbody tr.keynote-row:hover { background: #e9fffd; }
+        .keynote-badge { background: var(--accent-color); color: #fff; font-size: .7rem; padding: .2rem .45rem; border-radius: 999px; margin-left: .5rem; letter-spacing: .3px; }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark custom-navbar sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="images/logo.png" alt="OWASP AppSec Days Singapore 2025" height="40" class="d-inline-block align-middle me-2">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="speakers.html">Speakers</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="schedule.html">Schedule</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="ctfDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            CTF
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="ctfDropdown">
+                            <li><a class="dropdown-item" href="global-ctf.html">Global CTF</a></li>
+                            <li><a class="dropdown-item" href="onsite-ctf.html">Onsite CTF</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="trainings.html">Trainings</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#register">Register</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#sponsors">Sponsors</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="hero-section">
+        <div class="container">
+            <div class="logo-container text-center mb-4">
+                <img src="images/logo.png" alt="OWASP AppSec Days Singapore 2025" class="img-fluid" style="max-width: 400px;">
+            </div>
+            <h1>Event Schedule</h1>
+            <p class="lead">12-13 September 2025</p>
+        </div>
+    </div>
+
+    <div class="container schedule-section">
+        <div class="schedule-tabs">
+            <button class="tab-btn active" data-target="#day1">Day 1</button>
+            <button class="tab-btn" data-target="#day2">Day 2</button>
+        </div>
+        <div class="row g-4">
+            <div class="col-12">
+                <div id="day1" class="day-pane">
+                <div class="day-card">
+                    <div class="day-header training">
+                        <h2 class="mb-1">Day 1: 12 September 2025</h2>
+                        <div class="meta">
+                            <span><i class="bi bi-geo-alt-fill"></i> Lifelong Learning Institute, Singapore</span>
+                        </div>
+                    </div>
+                    <div class="p-3 p-md-4">
+                        <div class="table-responsive">
+                            <table class="table align-middle session-table">
+                                <thead>
+                                    <tr>
+                                        <th style="width: 120px;">Time</th>
+                                        <th style="width: 240px;">Trainer Name</th>
+                                        <th>Training Title / Activity</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>8:30 AM</td>
+                                        <td>&mdash;</td>
+                                        <td>Registration starts</td>
+                                    </tr>
+                                    <tr>
+                                        <td>9:00 AM</td>
+                                        <td>
+                                          <div class="d-flex align-items-center gap-2">
+                                            <img src="speakers/abraham-aranguren.png" alt="Abraham Aranguren" class="mini-avatar">
+                                            <span>Abraham Aranguren</span>
+                                          </div>
+                                        </td>
+                                        <td>Hacking Modern Web Apps: Master the Future of Attack Vectors</td>
+                                    </tr>
+                                    <tr>
+                                        <td>9:00 AM</td>
+                                        <td>
+                                          <div class="d-flex align-items-center gap-2">
+                                            <img src="speakers/marudhamaran-gunasekaran.jpg" alt="Marudhamaran Gunasekaran" class="mini-avatar">
+                                            <span>Marudhamaran Gunasekaran</span>
+                                          </div>
+                                        </td>
+                                        <td>Advanced AI Red Teaming: Adversarial Testing for LLM Applications</td>
+                                    </tr>
+                                    <tr>
+                                        <td>9:00 AM</td>
+                                        <td>&mdash;</td>
+                                        <td>On-Site CTF</td>
+                                    </tr>
+                                    <tr class="break-row">
+                                        <td>10:30 AM</td>
+                                        <td>&mdash;</td>
+                                        <td>AM Break for 15 Minutes</td>
+                                    </tr>
+                                    <tr class="break-row">
+                                        <td>12:30 PM</td>
+                                        <td>&mdash;</td>
+                                        <td>Lunch Break for 1 Hour</td>
+                                    </tr>
+                                    <tr class="break-row">
+                                        <td>3:30 PM</td>
+                                        <td>&mdash;</td>
+                                        <td>PM Break for 15 Minutes</td>
+                                    </tr>
+                                    <tr class="table-light">
+                                        <td>5:30 PM</td>
+                                        <td>&mdash;</td>
+                                        <td><strong>End of Day 1</strong></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+
+            <div class="col-12">
+                <div id="day2" class="day-pane hidden">
+                <div class="day-card">
+                    <div class="day-header">
+                        <h2 class="mb-1">Day 2: 13 September 2025</h2>
+                        <div class="meta">
+                            <span><i class="bi bi-geo-alt-fill"></i> M Hotel, Singapore</span>
+                        </div>
+                    </div>
+                    <div class="p-3 p-md-4">
+                        <div class="table-responsive">
+                            <table class="table align-middle session-table">
+                                <thead>
+                                    <tr>
+                                        <th style="width: 120px;">Time</th>
+                                        <th style="width: 240px;">Speaker Name</th>
+                                        <th>Talk Title / Activity</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>8:30 AM</td>
+                                        <td>&mdash;</td>
+                                        <td>Registration starts</td>
+                                    </tr>
+                                    <tr>
+                                        <td>9:00 AM</td>
+                                        <td>
+                                          <div class="d-flex align-items-center gap-2">
+                                            <img src="speakers/Indrajeet.jpg" alt="Indrajeet Bhuyan" class="mini-avatar">
+                                            <span>Indrajeet Bhuyan</span>
+                                          </div>
+                                        </td>
+                                        <td>Opening Note</td>
+                                    </tr>
+                                    <tr>
+                                        <td>9:10 AM</td>
+                                        <td>
+                                          <div class="d-flex align-items-center gap-2">
+                                            <img src="speakers/Onn Che Wong.jpeg" alt="Onn Chee" class="mini-avatar">
+                                            <img src="speakers/cecil.jpeg" alt="Cecil" class="mini-avatar">
+                                            <span>Onn Chee & Cecil</span>
+                                          </div>
+                                        </td>
+                                        <td>OWASP Singapore Journey</td>
+                                    </tr>
+                                    <tr class="keynote-row">
+                                        <td>9:20 AM</td>
+                                        <td>
+                                          <div class="d-flex align-items-center gap-2">
+                                            <img src="speakers/pedram.jpeg" alt="Pedram Hayati" class="mini-avatar">
+                                            <span>Pedram Hayati</span>
+                                          </div>
+                                        </td>
+                                        <td>
+                                          <strong>40,000 CVEs and Counting: The State of AppSec in 2025</strong>
+                                          <span class="keynote-badge">Keynote</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>9:45 AM</td>
+                                        <td>
+                                          <div class="d-flex align-items-center gap-2">
+                                            <img src="speakers/august-joseph.jpg" alt="August Joseph" class="mini-avatar">
+                                            <span>August Joseph</span>
+                                          </div>
+                                        </td>
+                                        <td>The Birthplace of Lies: Hacking Analytics SDKs</td>
+                                    </tr>
+                                    <tr>
+                                        <td>10:15 AM</td>
+                                        <td>
+                                          <div class="d-flex align-items-center gap-2">
+                                            <img src="speakers/melvin-lee.jpg" alt="Melvin Lee" class="mini-avatar">
+                                            <img src="speakers/nicholas-lim.jpg" alt="Nicholas Lim" class="mini-avatar">
+                                            <span>Melvin Lee & Nicholas Lim</span>
+                                          </div>
+                                        </td>
+                                        <td>iOS Reversing on a Budget: Frida, Ghidra, and a Jailbroken Device</td>
+                                    </tr>
+                                    <tr class="break-row">
+                                        <td>10:45 AM</td>
+                                        <td>&mdash;</td>
+                                        <td>AM break for 15 Minutes</td>
+                                    </tr>
+                                    <tr>
+                                        <td>11:00 AM</td>
+                                        <td>
+                                          <div class="d-flex align-items-center gap-2">
+                                            <img src="speakers/omkar-joshi.jpg" alt="Omkar Joshi" class="mini-avatar">
+                                            <img src="speakers/rahul-bhor.jpg" alt="Rahul Bhor" class="mini-avatar">
+                                            <span>Omkar Joshi & Rahul Bhor</span>
+                                          </div>
+                                        </td>
+                                        <td>Model Mayhem: Pwn, Poison & Prompt-Hack Your AI</td>
+                                    </tr>
+                                    <tr>
+                                        <td>11:30 AM</td>
+                                        <td>
+                                          <div class="d-flex align-items-center gap-2">
+                                            <img src="speakers/niclas-kjellin.jpg" alt="Niclas Kjellin" class="mini-avatar">
+                                            <span>Niclas Kjellin</span>
+                                          </div>
+                                        </td>
+                                        <td>Breaking the Next Factor - Live MFA Hacking</td>
+                                    </tr>
+                                    <tr>
+                                        <td>12:00 PM</td>
+                                        <td>
+                                          <div class="d-flex align-items-center gap-2">
+                                            <img src="speakers/rushikesh-ambuskar.png" alt="Rushikesh Ambuskar" class="mini-avatar">
+                                            <span>Rushikesh Ambuskar</span>
+                                          </div>
+                                        </td>
+                                        <td>The Hacker's Playbook for Building a Secure Startup</td>
+                                    </tr>
+                                    <tr class="break-row">
+                                        <td>12:30 PM</td>
+                                        <td>&mdash;</td>
+                                        <td>Lunch break for 45 Minutes</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1:15 PM</td>
+                                        <td>
+                                          <div class="d-flex align-items-center gap-2">
+                                            <img src="speakers/Rishika.jpeg" alt="Rishika Desai" class="mini-avatar">
+                                            <span>Rishika Desai</span>
+                                          </div>
+                                        </td>
+                                        <td>Cybersecurity Through a Creator's Lens: More Than Just a Tech Job</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1:45 PM</td>
+                                        <td>
+                                          <div class="d-flex align-items-center gap-2">
+                                            <img src="speakers/muhammad-shahmeer.jpeg" alt="Muhammad Shahmeer" class="mini-avatar">
+                                            <span>Muhammad Shahmeer</span>
+                                          </div>
+                                        </td>
+                                        <td>Uncharted Territory: The Art of Hacking Transportation - Planes, Trains, and Ships</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2:15 PM</td>
+                                        <td>
+                                          <div class="d-flex align-items-center gap-2">
+                                            <img src="speakers/keren-katz.jpg" alt="Keren Katz" class="mini-avatar">
+                                            <span>Keren Katz</span>
+                                          </div>
+                                        </td>
+                                        <td>When the Enemy Is Already Inside: Securing Enterprise AI Agents Against Insider Threats</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2:45 PM</td>
+                                        <td>
+                                          <div class="d-flex align-items-center gap-2">
+                                            <img src="speakers/marudhamaran-gunasekaran.jpg" alt="Marudhamaran Gunasekaran" class="mini-avatar">
+                                            <span>Marudhamaran Gunasekaran</span>
+                                          </div>
+                                        </td>
+                                        <td>Securing the AI Pipeline: Implementing DevSecOps for Machine Learning Projects</td>
+                                    </tr>
+                                    <tr>
+                                        <td>3:15 PM</td>
+                                        <td>
+                                          <div class="d-flex align-items-center gap-2">
+                                            <img src="speakers/javan-rasokat.jpg" alt="Javan Rasokat" class="mini-avatar">
+                                            <span>Javan Rasokat</span>
+                                          </div>
+                                        </td>
+                                        <td>XSS is dead - Browser Security Features that Eliminate Bug Classes</td>
+                                    </tr>
+                                    <tr class="break-row">
+                                        <td>3:45 PM</td>
+                                        <td>&mdash;</td>
+                                        <td>PM Break for 15 Minutes</td>
+                                    </tr>
+                                    <tr>
+                                        <td>4:00 PM</td>
+                                        <td>
+                                          <div class="d-flex align-items-center gap-2">
+                                            <img src="speakers/hassan-khan-yusufzai.png" alt="Hassan Khan Yusufzai" class="mini-avatar">
+                                            <img src="speakers/danish-tariq.jpeg" alt="Danish Tariq" class="mini-avatar">
+                                            <span>Hassan Khan Yusufzai & Danish Tariq</span>
+                                          </div>
+                                        </td>
+                                        <td>Secret scanning in open source at scale (in-depth)</td>
+                                    </tr>
+                                    <tr>
+                                        <td>4:30 PM</td>
+                                        <td>
+                                          <div class="d-flex align-items-center gap-2">
+                                            <img src="speakers/anjali-singh-shukla.jpg" alt="Anjali Shukla" class="mini-avatar">
+                                            <img src="speakers/divyanshu-shukla.jpg" alt="Divyanshu Shukla" class="mini-avatar">
+                                            <span>Anjali Shukla &amp; Divyanshu Shukla</span>
+                                          </div>
+                                        </td>
+                                        <td>How Attackers Exploit Misconfigured AWS EKS through Lessons from OWASP EKS Goat</td>
+                                    </tr>
+                                    <tr>
+                                        <td>5:00 PM</td>
+                                        <td>
+                                          <div class="d-flex align-items-center gap-2">
+                                            <img src="speakers/ilia-mogilin.jpg" alt="Ilia Mogilin" class="mini-avatar">
+                                            <span>Ilia Mogilin</span>
+                                          </div>
+                                        </td>
+                                        <td>Securing your Lambda 101</td>
+                                    </tr>
+                                    <tr class="table-light">
+                                        <td>5:30 PM</td>
+                                        <td>&mdash;</td>
+                                        <td><strong>Closing note and CTF Prize distribution</strong></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="custom-footer text-center py-4 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <h5>Contact Us</h5>
+                    <p><i class="bi bi-envelope me-2"></i> info@appsecdayssingapore.org</p>
+                </div>
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <h5>Follow Us</h5>
+                    <div class="social-icons">
+                        <a href="#" class="me-2"><i class="bi bi-twitter"></i></a>
+                        <a href="#" class="me-2"><i class="bi bi-linkedin"></i></a>
+                        <a href="#" class="me-2"><i class="bi bi-facebook"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#register">Register</a></li>
+                        <li><a href="cfp.html">Call for Papers</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-4">
+                <p class="mb-0">&copy; 2025 OWASP AppSec Days Singapore. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+      // Simple tabs for Day 1 / Day 2
+      document.addEventListener('DOMContentLoaded', function() {
+        const buttons = document.querySelectorAll('.tab-btn');
+        buttons.forEach(btn => {
+          btn.addEventListener('click', () => {
+            buttons.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            const target = document.querySelector(btn.getAttribute('data-target'));
+            document.querySelectorAll('.day-pane').forEach(pane => pane.classList.add('hidden'));
+            if (target) target.classList.remove('hidden');
+          });
+        });
+      });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
